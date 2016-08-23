@@ -1,0 +1,60 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="gd-dico-list">
+
+  <template>
+
+    <style>
+    </style>
+
+    <paper-card>
+      <div class="card-content">
+        <paper-dropdown-menu horizontal-align="left">
+          <paper-listbox  class="dropdown-content">
+            <template is="dom-repeat" items='[[viewList]]' as="view">
+              <paper-item>[[view]]</paper-item>
+            </template>
+          </paper-listbox>
+        </paper-dropdown-menu>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'gd-dico-list',
+
+      properties: {
+        viewList: {
+          type: Array,
+          value: function() {return [
+            'aze',
+            'toto',
+            'test',
+            'azeaze'
+          ];}
+        }
+      }
+
+    });
+
+  </script>
+
+</dom-module>

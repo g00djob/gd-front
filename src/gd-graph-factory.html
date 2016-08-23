@@ -10,6 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="gd-dico-list.html">
 
 <dom-module id="gd-graph-factory">
 
@@ -21,9 +23,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 10px;
         @apply(--layout-horizontal);
       }
-      paper-card {
-        @apply(--layout-flex);
-      }
       h1 {
         font-size: 22px;
         margin: 16px 0;
@@ -31,12 +30,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <paper-card heading="Fabrique de graphes">
-      <div class="card-content">
-        <p>La fabrique de graphes permet de construire des représentations facilement exploitables des données exposées par l'administrateur.</p>
-        <p>Ces graphes pourront par la suite être exporté, dans le tableau de bord, ou en tant que document à part entière.</p>
-      </div>
-    </paper-card>
+    <gd-dico-list>
+    </gd-dico-list>
 
   </template>
 
