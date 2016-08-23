@@ -51,6 +51,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .paper-item-link.iron-selected paper-icon-item {
         font-weight:bold;
       }
+      .paper-item-link paper-icon-item {
+        --paper-item-focused-before: {
+          opacity: 0;
+        }
+      }
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -60,15 +65,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed>
+    <app-drawer-layout fullbleed force-narrow>
 
       <!-- Drawer content -->
       <app-drawer>
         <app-toolbar>Navigation</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" role="navigation">
-          <a class="paper-item-link" name="dashboard" href="/dashboard" tabindex="-1"><paper-icon-item><iron-icon icon="icons:dashboard" item-icon></iron-icon> Tableau de bord</paper-icon-item></a>
-          <a class="paper-item-link" name="graph-factory" href="/graph-factory" tabindex="-1"><paper-icon-item><iron-icon icon="editor:insert-chart" item-icon></iron-icon> Fabrique de graphes</paper-icon-item></a>
-          <a class="paper-item-link" name="admin" href="/admin" tabindex="-1"><paper-icon-item><iron-icon icon="icons:settings" item-icon></iron-icon> Administration</paper-icon-item></a>
+          <a class="paper-item-link" name="dashboard" href="/dashboard" tabindex="-1"><paper-icon-item drawer-toggle><iron-icon icon="icons:dashboard" item-icon></iron-icon> Tableau de bord</paper-icon-item></a>
+          <a class="paper-item-link" name="graph-factory" href="/graph-factory" tabindex="-1"><paper-icon-item drawer-toggle><iron-icon icon="editor:insert-chart" item-icon></iron-icon> Fabrique de graphes</paper-icon-item></a>
+          <a class="paper-item-link" name="dico" href="/dico" tabindex="-1"><paper-icon-item drawer-toggle><iron-icon icon="icons:settings" item-icon></iron-icon> Dictionnaire de données</paper-icon-item></a>
+          <a class="paper-item-link" name="admin" href="/admin" tabindex="-1"><paper-icon-item drawer-toggle><iron-icon icon="icons:settings" item-icon></iron-icon> Administration</paper-icon-item></a>
         </iron-selector>
       </app-drawer>
 
@@ -86,6 +92,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <gd-dashboard name="dashboard"></gd-dashboard>
           <gd-graph-factory name="graph-factory"></gd-graph-factory>
           <gd-admin name="admin"></gd-admin>
+          <gd-dico name="dico"></gd-dico>
         </iron-pages>
 
       </app-header-layout>

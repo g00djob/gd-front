@@ -4,6 +4,7 @@
   "fragments": [
     "src/gd-dashboard.html",
     "src/gd-graph-factory.html",
+    "src/gd-dico.html",
     "src/gd-admin.html"
   ]
 }
