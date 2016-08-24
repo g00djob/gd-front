@@ -21,7 +21,9 @@
     "paper-card": "PolymerElements/paper-card#^1.1.2",
     "paper-input": "PolymerElements/paper-input#^1.1.17",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.3.5",
-    "paper-listbox": "polymerelements/paper-listbox#^1.1.2"
+    "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
+    "paper-toolbar": "PolymerElements/paper-toolbar#^1.1.6",
+    "paper-menu": "PolymerElements/paper-menu#^1.2.2"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

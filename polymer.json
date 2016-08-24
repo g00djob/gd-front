@@ -2,9 +2,11 @@
   "entrypoint": "index.html",
   "shell": "src/gd-app.html",
   "fragments": [
+    "src/gd-admin.html",
     "src/gd-dashboard.html",
-    "src/gd-graph-factory.html",
+    "src/gd-dico-list.html",
     "src/gd-dico.html",
-    "src/gd-admin.html"
+    "src/gd-frame.html",
+    "src/gd-graph-factory.html"
   ]
 }

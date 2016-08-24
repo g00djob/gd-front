@@ -8,7 +8,6 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
@@ -21,17 +20,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style>
     </style>
 
-    <paper-card>
-      <div class="card-content">
-        <paper-dropdown-menu horizontal-align="left">
-          <paper-listbox  class="dropdown-content">
-            <template is="dom-repeat" items='[[viewList]]' as="view">
-              <paper-item>[[view]]</paper-item>
-            </template>
-          </paper-listbox>
-        </paper-dropdown-menu>
-      </div>
-    </paper-card>
+    <paper-dropdown-menu horizontal-align="left" label="Vue active">
+      <paper-listbox class="dropdown-content">
+        <template is="dom-repeat" items='[[viewList]]' as="view">
+          <paper-item>[[view]]</paper-item>
+        </template>
+      </paper-listbox>
+    </paper-dropdown-menu>
 
   </template>
 

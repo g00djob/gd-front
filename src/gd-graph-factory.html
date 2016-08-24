@@ -11,28 +11,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="gd-dico-list.html">
+<link rel="import" href="gd-frame.html">
 
 <dom-module id="gd-graph-factory">
 
   <template>
 
-    <style>
+    <style include="iron-flex">
       :host {
         display: block;
         padding: 10px;
         @apply(--layout-horizontal);
       }
-      h1 {
-        font-size: 22px;
-        margin: 16px 0;
-        color: #212121;
-      }
     </style>
 
-    <gd-dico-list>
-    </gd-dico-list>
-
+    <gd-frame class="flex" heading="Graphe">
+    </gd-frame>
+    <gd-frame heading="Données">
+      <gd-dico-list></gd-dico-list>
+    </gd-frame>
   </template>
 
   <script>
