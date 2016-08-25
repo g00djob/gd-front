@@ -8,9 +8,9 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <dom-module id="gd-dico-list">
@@ -18,16 +18,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
 
     <style>
+      paper-listbox[hidden] {
+        display: none !important;
+      }
     </style>
 
     <paper-dropdown-menu horizontal-align="left" label="Vue active">
-      <paper-listbox class="dropdown-content">
+      <paper-listbox class="dropdown-content" attr-for-selected="name" selected="{{selectedView}}" on-iron-select="refreshColumnsList">
         <template is="dom-repeat" items='[[viewList]]' as="view">
-          <paper-item>[[view]]</paper-item>
+          <paper-item name="[[view]]">[[view]]</paper-item>
         </template>
       </paper-listbox>
     </paper-dropdown-menu>
-
+    <paper-listbox hidden$="{{!selectedView}}">
+      <template is="dom-repeat" items='{{viewColumns}}' as="column">
+        <paper-item>[[column]]</paper-item>
+      </template>
+    </paper-listbox>
   </template>
 
   <script>
@@ -37,15 +44,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'gd-dico-list',
 
       properties: {
+        selectedView: {
+          type: Object,
+          value: false
+        },
         viewList: {
           type: Array,
           value: function() {return [
-            'aze',
-            'toto',
-            'test',
-            'azeaze'
+            'Vue 1',
+            'Vue 2',
+            'Vue 3',
+            'Vue 4',
+            'Vue 5',
+            'Vue 6'
           ];}
+        },
+        viewColumns: {
+          type: Array,
+          value: function() {return [];}
         }
+      },
+
+      refreshColumnsList: function(event, details) {
+        // TODO : Appel ajax pour récupérer les colonnes
+        this.viewColumns = [
+          details.item.name + ' - colonne 1',
+          details.item.name + ' - colonne 2',
+          details.item.name + ' - colonne 3',
+          details.item.name + ' - colonne 4',
+          details.item.name + ' - colonne 5',
+          details.item.name + ' - colonne 6'
+        ];
       }
 
     });

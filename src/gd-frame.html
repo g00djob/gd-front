@@ -39,8 +39,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-toolbar>
         <div class="title">[[heading]]</div>
         <paper-menu-button close-on-activate>
-          <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
-          <paper-menu class="dropdown-content">
+          <paper-icon-button class="dropdown-trigger" icon="more-vert"></paper-icon-button>
+          <paper-menu id="menu" class="dropdown-content" on-iron-select="unselectAll">
             <paper-item>Test</paper-item>
             <paper-item>Test</paper-item>
             <paper-item>Test</paper-item>
@@ -48,7 +48,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-menu-button>
       </paper-toolbar>
       <div class="frame-content">
-        <content></content>
+        <content select=".frame-content"></content>
       </div>
     </paper-material>
 
@@ -65,6 +65,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           type: String,
           value: ''
         }
+      },
+
+      unselectAll:  function(event) {
+        this.$.menu.selected = null;
       }
 
     });
