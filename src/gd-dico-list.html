@@ -23,6 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
+    <!--TODO : Dialog pour le choix + nombre de lignes à récupérer -->
     <paper-dropdown-menu horizontal-align="left" label="Vue active">
       <paper-listbox class="dropdown-content" attr-for-selected="name" selected="{{selectedView}}" on-iron-select="refreshColumnsList">
         <template is="dom-repeat" items='[[viewList]]' as="view">
@@ -67,6 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       refreshColumnsList: function(event, details) {
         // TODO : Appel ajax pour récupérer les colonnes
+        // TODO : Récupérer des données (limitées)
         this.viewColumns = [
           details.item.name + ' - colonne 1',
           details.item.name + ' - colonne 2',
